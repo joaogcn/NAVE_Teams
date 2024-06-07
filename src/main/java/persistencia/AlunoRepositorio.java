@@ -2,7 +2,6 @@ package persistencia;
 
 import entidades.Aluno;
 import org.springframework.stereotype.Repository;
-
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
@@ -10,19 +9,19 @@ import java.util.List;
 @Repository
 public class AlunoRepositorio {
 	private List<Aluno> alunos;
-	
+
 	public AlunoRepositorio() {
 		alunos = new ArrayList<Aluno>();
 	}
-	
+
 	public void salvar(Aluno aluno) {
 		if (aluno == null) {
 			throw new IllegalArgumentException();
 		}
-		
+
 		alunos.add(aluno);
 	}
-	
+
 	public List<Aluno> pesquisar() {
 		var copia = new ArrayList<Aluno>();
 		copia.addAll(alunos);
@@ -33,7 +32,7 @@ public class AlunoRepositorio {
 			}
 		} );
 		return copia;
-		
+
 	}
 
 	public Aluno obter(String email) {
@@ -45,7 +44,7 @@ public class AlunoRepositorio {
 		return null;
 	}
 
-	
+
 	public void excluir(String email) {
 		var i = alunos.iterator();
 		while (i.hasNext()) {
@@ -53,12 +52,12 @@ public class AlunoRepositorio {
 			if (aluno.getEmail() == email) {
 				i.remove();
 				break;
-				
+
 			}
-				
+
 		}
-		
+
 	}
-	
+
 
 }

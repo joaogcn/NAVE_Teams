@@ -3,36 +3,35 @@ package entidades;
 public abstract class Usuario {
 	private String nome;
 	private String email;
-	private String senha;
-	
+
+	// Construtor padrão
+	public Usuario() {
+	}
+
+	// Construtor com parâmetros
+	public Usuario(String nome, String email) {
+		this.nome = nome;
+		this.email = email;
+	}
+
 	public String getNome() {
 		return nome;
 	}
+
 	public void setNome(String nome) {
-		if (nome == null) {
-			throw new IllegalArgumentException();
-			}
 		this.nome = nome;
 	}
+
 	public String getEmail() {
 		return email;
 	}
+
 	public void setEmail(String email) {
-		if (email == null) {
-			throw new IllegalArgumentException();
-	}
 		this.email = email;
 	}
-	public String getSenha() {
-		return senha;
-	}
-	public void setSenha(String senha) {
-		if (senha == null) {
-			throw new IllegalArgumentException();
-	}
-		this.senha = senha;
-	}
-	
-	
 
+	@Override
+	public String toString() {
+		return "Usuario [nome=" + nome + ", email=" + email + "]";
+	}
 }
