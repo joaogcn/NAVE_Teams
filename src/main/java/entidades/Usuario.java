@@ -4,11 +4,9 @@ public abstract class Usuario {
 	private String nome;
 	private String email;
 
-	// Construtor padrão
 	public Usuario() {
 	}
 
-	// Construtor com parâmetros
 	public Usuario(String nome, String email) {
 		this.nome = nome;
 		this.email = email;
